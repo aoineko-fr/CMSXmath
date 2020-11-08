@@ -1,4 +1,4 @@
-
+```
    _____          __  .__      ___________     ___.   .__          
   /     \ _____ _/  |_|  |__   \__    ___/____ \_ |__ |  |   ____  
  /  \ /  \\__  \\   __\  |  \    |    |  \__  \ | __ \|  | _/ __ \ 
@@ -33,3 +33,4 @@ For example :
 > MathTable -num 64 -bytes 2 -shift 8 sin cos  > Generated\trigo_64.h
 
 Will create Sinus and Cosinus tables of 64 entries stored in a WORD (2 bytes) with a fixed-point of 8 bits (this mean that the upper 8 bitsare for the integer part and the lower 8 bits for the decimal) and write them into the rigo_64.f file.
+```
