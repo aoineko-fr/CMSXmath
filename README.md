@@ -33,7 +33,7 @@ For example :
 > MathTable -num 64 -bytes 2 -shift 8 sin cos  > Generated\trigo_64.h
 
 Will create Sinus and Cosinus tables of 64 entries stored in a WORD (2 bytes) 
-using with a fixed-point of 8 bits (*) and write them into the rigo_64.f file
+using with a fixed-point of 8 bits (*) and write them into the "trigo_64.h" file
 
 * This mean that the upper 8 bits are for the integer part and the lower 8 bits for the fractional part.
 ```
