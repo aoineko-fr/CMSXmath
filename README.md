@@ -30,7 +30,7 @@ Tables:
    equa A B C D E   Equation of type y=A+B*(C+x*D)^E
 
 For example :
-> MathTable -num 64 -bytes 2 -shift 8 sin cos  > Generated\trigo_64.h
+> MathTable -num 64 -bytes 2 -shift 8 sin cos  > trigo_64.h
 
 Will create Sinus and Cosinus tables of 64 entries stored in a WORD (2 bytes) 
 using with a fixed-point of 8 bits (*) and write them into the "trigo_64.h" file
