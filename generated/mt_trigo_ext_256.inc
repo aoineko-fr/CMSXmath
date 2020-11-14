@@ -1,12 +1,18 @@
 //-----------------------------------------------------------------------------
-// Math Table Generator (v1.3)                                               
-// by Guillaume "Aoineko" Blanchard (aoineko@free.fr) under CC-BY-AS licence 
-// Generated: Sat Nov  7 23:04:55 2020
-// Parameters: Entries=256, Bytes=2 (16-bits), Shift=8                        
+//     _____          __  .__      ___________     ___.   .__            v1.4.1   
+//    /     \ _____ _/  |_|  |__   \__    ___/____ \_ |__ |  |   ____          
+//   /  \ /  \\__  \\   __\  |  \    |    |  \__  \ | __ \|  | _/ __ \         
+//  /    Y    \/ __ \|  | |   Y  \   |    |   / __ \| \_\ \  |_\  ___/         
+//  \____|__  (____  /__| |___|  /   |____|  (____  /___  /____/\___  >        
+//          \/     \/          \/                 \/    \/          \/         
+//  by Guillaume "Aoineko" Blanchard (aoineko@free.fr) under CC-BY-AS license
+//                                                                             
+// Generated: Sat Nov 14 23:31:30 2020
+// Parameters: Entries=256, Bytes=2 (16-bits), Shift=8 (Q8.8)               
 //-----------------------------------------------------------------------------
 
 // Tangent table. Range [-Pi/2:Pi/2]
-static const signed short g_Tangent256[257] =
+static const unsigned short g_Tangent256[257] =
 {
 	0x0000, 0xC9AF, 0xE4DA, 0xEDE9, 0xF272, 0xF52B, 0xF6FC, 0xF849, 
 	0xF943, 0xFA05, 0xFAA2, 0xFB22, 0xFB8C, 0xFBE7, 0xFC35, 0xFC79, 
@@ -24,12 +30,12 @@ static const signed short g_Tangent256[257] =
 	0x005B, 0x0060, 0x0066, 0x006B, 0x0071, 0x0077, 0x007C, 0x0082, 
 	0x0088, 0x008E, 0x0095, 0x009B, 0x00A2, 0x00A8, 0x00AF, 0x00B6, 
 	0x00BD, 0x00C5, 0x00CC, 0x00D4, 0x00DC, 0x00E5, 0x00ED, 0x00F6, 
-	0x00FF, 0x0109, 0x0113, 0x011D, 0x0128, 0x0134, 0x013F, 0x014C, 
+	0x0100, 0x0109, 0x0113, 0x011D, 0x0128, 0x0134, 0x013F, 0x014C, 
 	0x0159, 0x0166, 0x0175, 0x0184, 0x0194, 0x01A5, 0x01B7, 0x01CA, 
 	0x01DE, 0x01F4, 0x020C, 0x0225, 0x0241, 0x025F, 0x0280, 0x02A3, 
 	0x02CB, 0x02F7, 0x0328, 0x035E, 0x039D, 0x03E4, 0x0435, 0x0495, 
 	0x0506, 0x058F, 0x0637, 0x0709, 0x081B, 0x098D, 0x0B9C, 0x0ECB, 
-	0x145A, 0x2095, 0x517B, 0x5D08, 0xD744, 0xE8BC, 0xEFBA, 0xF37E, 
+	0x145B, 0x2095, 0x517B, 0x5D08, 0xD744, 0xE8BC, 0xEFBA, 0xF37E, 
 	0xF5D9, 0xF777, 0xF8A4, 0xF989, 0xFA3D, 0xFACF, 0xFB47, 0xFBAC, 
 	0xFC02, 0xFC4D, 0xFC8E, 0xFCC7, 0xFCFA, 0xFD27, 0xFD50, 0xFD75, 
 	0xFD96, 0xFDB5, 0xFDD2, 0xFDEC, 0xFE04, 0xFE1A, 0xFE2F, 0xFE43, 
@@ -44,7 +50,7 @@ static const signed short g_Tangent256[257] =
 };
 
 // ArcSinus table. Range [-1:1]
-static const signed short g_ArcSinus256[257] =
+static const unsigned short g_ArcSinus256[257] =
 {
 	0xFE6E, 0xFE8E, 0xFE9C, 0xFEA6, 0xFEAF, 0xFEB6, 0xFEBD, 0xFEC3, 
 	0xFEC9, 0xFECF, 0xFED4, 0xFED9, 0xFEDE, 0xFEE3, 0xFEE7, 0xFEEC, 
@@ -82,7 +88,7 @@ static const signed short g_ArcSinus256[257] =
 };
 
 // ArcCosinus table. Range [-1:1]
-static const signed short g_ArcCosinus256[257] =
+static const unsigned short g_ArcCosinus256[257] =
 {
 	0x0324, 0x0304, 0x02F6, 0x02EC, 0x02E4, 0x02DC, 0x02D5, 0x02CF, 
 	0x02C9, 0x02C3, 0x02BE, 0x02B9, 0x02B4, 0x02AF, 0x02AB, 0x02A7, 
@@ -120,7 +126,7 @@ static const signed short g_ArcCosinus256[257] =
 };
 
 // ArcTangent table. Range [0:N]
-static const signed short g_ArcTangent256[257] =
+static const unsigned short g_ArcTangent256[257] =
 {
 	0x0000, 0x00C9, 0x011B, 0x013F, 0x0153, 0x015F, 0x0167, 0x016D, 
 	0x0172, 0x0175, 0x0178, 0x017A, 0x017C, 0x017E, 0x017F, 0x0181, 

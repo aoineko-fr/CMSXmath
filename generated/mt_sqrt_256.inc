@@ -1,8 +1,14 @@
 //-----------------------------------------------------------------------------
-// Math Table Generator (v1.3)                                               
-// by Guillaume "Aoineko" Blanchard (aoineko@free.fr) under CC-BY-AS licence 
-// Generated: Sat Nov  7 23:04:55 2020
-// Parameters: Entries=256, Bytes=1 (8-bits), Shift=4                        
+//     _____          __  .__      ___________     ___.   .__            v1.4.1   
+//    /     \ _____ _/  |_|  |__   \__    ___/____ \_ |__ |  |   ____          
+//   /  \ /  \\__  \\   __\  |  \    |    |  \__  \ | __ \|  | _/ __ \         
+//  /    Y    \/ __ \|  | |   Y  \   |    |   / __ \| \_\ \  |_\  ___/         
+//  \____|__  (____  /__| |___|  /   |____|  (____  /___  /____/\___  >        
+//          \/     \/          \/                 \/    \/          \/         
+//  by Guillaume "Aoineko" Blanchard (aoineko@free.fr) under CC-BY-AS license
+//                                                                             
+// Generated: Sat Nov 14 23:31:30 2020
+// Parameters: Entries=256, Bytes=1 (8-bits), Shift=4 (Q4.4)               
 //-----------------------------------------------------------------------------
 
 // SquareRoot table. Range [0:N[

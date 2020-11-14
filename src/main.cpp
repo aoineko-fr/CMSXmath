@@ -17,8 +17,7 @@
 //-----------------------------------------------------------------------------
 // D E F I N E S
 
-#define VERSION_MAJ 1
-#define VERSION_MIN 4
+const char* VERSION = "1.4.1";
 
 enum FORMAT
 {
@@ -73,12 +72,12 @@ int Format = FORMAT_C;
 const Operation OpTable[8] =
 {
 	//        op      name          range         min:max        inc    sisn   func
-	/* 0 */ { "sin",  "Sinus",      "0:Pi*2",     0, PI_2,       false, true,  ComputeSinus },
-	/* 1 */ { "cos",  "Cosinus",    "0:Pi*2",     0, PI_2,       false, true,  ComputeCosinus },
-	/* 2 */ { "tan",  "Tangent",    "-Pi/2:Pi/2", -PI/2, PI_2/2, true,  true,  ComputeTangent },
-	/* 3 */ { "asin", "ArcSinus",   "-1:1",       -1, 1,         true,  true,  ComputeArcSinus },
-	/* 4 */ { "acos", "ArcCosinus", "-1:1",       -1, 1,         true,  true,  ComputeArcCosinus },
-	/* 5 */ { "atan", "ArcTangent", "0:N",        0, 0,          true,  true,  ComputeArcTangent },
+	/* 0 */ { "sin",  "Sinus",      "0:Pi*2",     0, PI_2,       false, false, ComputeSinus },
+	/* 1 */ { "cos",  "Cosinus",    "0:Pi*2",     0, PI_2,       false, false, ComputeCosinus },
+	/* 2 */ { "tan",  "Tangent",    "-Pi/2:Pi/2", -PI/2, PI_2/2, true,  false, ComputeTangent },
+	/* 3 */ { "asin", "ArcSinus",   "-1:1",       -1, 1,         true,  false, ComputeArcSinus },
+	/* 4 */ { "acos", "ArcCosinus", "-1:1",       -1, 1,         true,  false, ComputeArcCosinus },
+	/* 5 */ { "atan", "ArcTangent", "0:N",        0, 0,          true,  false, ComputeArcTangent },
 	/* 6 */ { "sq",   "Square",     "0:1",        0, 1,          true,  false, ComputeSquare },
 	/* 7 */ { "sqrt", "SquareRoot", "0:N",        0, 0,          false, false, ComputeSquareRoot },
 };
@@ -205,7 +204,7 @@ double ComputeAngle(double x, double y)
 // Display help information
 void Help()
 {
-	printf("Math Table Generator (v%i.%i)\n", VERSION_MAJ, VERSION_MIN);
+	printf("Math Table Generator (v%s)\n", VERSION);
 	printf("Usage: mathtable [options] [tables]\n");
 	printf("Options:\n");
 	printf("   -num   <x>       Entries Number (Precision. Default=128)\n");
@@ -286,10 +285,16 @@ int main(int argc, const char* argv[])
 	const char* comment = (Format == FORMAT_C) ? "//" : ";";
 
 	printf("%s-----------------------------------------------------------------------------\n", comment);
-	printf("%s Math Table Generator (v%i.%i)                                               \n", comment, VERSION_MAJ, VERSION_MIN);
-	printf("%s by Guillaume \"Aoineko\" Blanchard (aoineko@free.fr) under CC-BY-AS license \n", comment);
+	printf("%s     _____          __  .__      ___________     ___.   .__            v%s   \n", comment, VERSION);
+	printf("%s    /     \\ _____ _/  |_|  |__   \\__    ___/____ \\_ |__ |  |   ____          \n", comment);
+	printf("%s   /  \\ /  \\\\__  \\\\   __\\  |  \\    |    |  \\__  \\ | __ \\|  | _/ __ \\         \n", comment);
+	printf("%s  /    Y    \\/ __ \\|  | |   Y  \\   |    |   / __ \\| \\_\\ \\  |_\\  ___/         \n", comment);
+	printf("%s  \\____|__  (____  /__| |___|  /   |____|  (____  /___  /____/\\___  >        \n", comment);
+	printf("%s          \\/     \\/          \\/                 \\/    \\/          \\/         \n", comment);
+	printf("%s  by Guillaume \"Aoineko\" Blanchard (aoineko@free.fr) under CC-BY-AS license\n", comment);
+	printf("%s                                                                             \n", comment);
 	printf("%s Generated: %s",                                                                  comment, timeBuf);
-	printf("%s Parameters: Entries=%d, Bytes=%d (%i-bits), Shift=%d                        \n", comment, Number, Bytes, Bytes*8, Shift);
+	printf("%s Parameters: Entries=%d, Bytes=%d (%i-bits), Shift=%d (Q%i.%i)               \n", comment, Number, Bytes, Bytes*8, Shift, Bytes*8 - Shift, Shift);
 	printf("%s-----------------------------------------------------------------------------\n", comment);
 
 	// Create tables
