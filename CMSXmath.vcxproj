@@ -19,13 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\CMSXmath.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <ProjectGuid>{346B5D6C-1242-40F0-A950-FEA143DEB33B}</ProjectGuid>
-    <RootNamespace>MathTable</RootNamespace>
+    <RootNamespace>CMSXmath</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>CMSXmath</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -76,21 +77,25 @@
     <LinkIncremental>true</LinkIncremental>
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
     <CustomBuildAfterTargets>
     </CustomBuildAfterTargets>
+    <OutDir>$(ProjectDir)$(Configuration)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -98,6 +103,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CMSXtk\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -112,7 +118,8 @@
       </Message>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)$(TargetName)$(TargetExt)</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(ProjectDir)$(TargetName)$(TargetExt)
+copy $(OutDir)$(TargetName)$(TargetExt) $(ProjectDir)..\CMSXtk\bin\$(TargetName)$(TargetExt)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copy generated program</Message>
@@ -124,6 +131,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CMSXtk\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -138,7 +146,8 @@
       </Message>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)$(TargetName)$(TargetExt)</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(ProjectDir)$(TargetName)$(TargetExt)
+copy $(OutDir)$(TargetName)$(TargetExt) $(ProjectDir)..\CMSXtk\bin\$(TargetName)$(TargetExt)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copy generated program</Message>
@@ -152,6 +161,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CMSXtk\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -168,7 +178,8 @@
       </Message>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)$(TargetName)$(TargetExt)</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(ProjectDir)$(TargetName)$(TargetExt)
+copy $(OutDir)$(TargetName)$(TargetExt) $(ProjectDir)..\CMSXtk\bin\$(TargetName)$(TargetExt)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copy generated program</Message>
@@ -182,6 +193,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\CMSXtk\src</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -198,7 +210,8 @@
       </Message>
     </CustomBuildStep>
     <PostBuildEvent>
-      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(SolutionDir)$(TargetName)$(TargetExt)</Command>
+      <Command>copy $(OutDir)$(TargetName)$(TargetExt) $(ProjectDir)$(TargetName)$(TargetExt)
+copy $(OutDir)$(TargetName)$(TargetExt) $(ProjectDir)..\CMSXtk\bin\$(TargetName)$(TargetExt)</Command>
     </PostBuildEvent>
     <PostBuildEvent>
       <Message>Copy generated program</Message>
